@@ -105,6 +105,29 @@
   </div>
 </body>
 </html>
+<!-- seu conteúdo HTML -->
+
+  <!-- aqui vem o script que eu te passei -->
+  <script>
+    const form = document.querySelector('form');
+
+    form.addEventListener('submit', function(event) {
+      event.preventDefault();
+
+      const nome = form.querySelector('input[type="text"]').value;
+      const email = form.querySelector('input[type="email"]').value;
+
+      if(nome && email) {
+        alert(`Conta criada com sucesso para ${nome}!`);
+        window.location.href = 'login.html';
+      } else {
+        alert('Por favor, preencha todos os campos.');
+      }
+    });
+  </script>
+</body>
+</html>
+
 
 
 atualiazando html
