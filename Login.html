@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Login - Corretora MK7</title>
+  <style>
+    body {
+      background-color: #0A1F44;
+      font-family: 'Montserrat', sans-serif;
+      color: #eee;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      margin: 0;
+    }
+    .login-container {
+      background-color: #122A66;
+      padding: 3rem 2rem;
+      border-radius: 16px;
+      box-shadow: 0 10px 25px rgba(0, 0, 0, 0.4);
+      width: 90%;
+      max-width: 400px;
+      text-align: center;
+    }
+    input[type="email"],
+    input[type="password"] {
+      width: 100%;
+      padding: 0.85rem;
+      margin-bottom: 1.2rem;
+      border: none;
+      border-radius: 8px;
+      font-size: 1rem;
+      outline: none;
+    }
+    input:focus {
+      box-shadow: 0 0 0 2px #eee;
+      background-color: #1a3580;
+    }
+    button {
+      width: 100%;
+      padding: 0.85rem;
+      background-color: #eee;
+      color: #0A1F44;
+      border: none;
+      border-radius: 8px;
+      font-weight: 700;
+      font-size: 1rem;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+    }
+    button:hover {
+      background-color: #c5c5c5;
+    }
+    .error {
+      color: #ff6b6b;
+      margin-bottom: 1rem;
+    }
+  </style>
+</head>
+<body>
+  <div class="login-container">
+    <h2>Login</h2>
+    <form id="loginForm">
+      <input type="email" placeholder="E-mail" required />
+      <input type="password" placeholder="Senha" required />
+      <div class="error" id="errorMsg"></div>
+      <button type="submit">Entrar</button>
+    </form>
+  </div>
+
+  <script>
+    const form = document.getElementById('loginForm');
+    const errorMsg = document.getElementById('errorMsg');
+
+    // Simulação: dados do usuário cadastrado
+    const usuarioCadastrado = {
+      email: 'teste@exemplo.com',
+      senha: '123456'
+    };
+
+    form.addEventListener('submit', function(event) {
+      event.preventDefault();
+
+      const email = form.querySelector('input[type="email"]').value;
+      const senha = form.querySelector('input[type="password"]').value;
+
+      if(email === usuarioCadastrado.email && senha === usuarioCadastrado.senha) {
+        // Login ok, redireciona para dashboard
+        window.location.href = 'dashboard.html';
+      } else {
+        errorMsg.textContent = 'E-mail ou senha incorretos.';
+      }
+    });
+  </script>
+</body>
+</html>
