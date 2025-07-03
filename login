@@ -19,19 +19,90 @@
 
     .login-container {
       background-color: #122A66;
-      padding: 2rem;
-      border-radius: 12px;
-      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+      padding: 3rem 2rem;
+      border-radius: 16px;
+      box-shadow: 0 10px 25px rgba(0, 0, 0, 0.4);
       width: 90%;
       max-width: 400px;
       text-align: center;
+      transition: all 0.3s ease;
     }
 
     h2 {
       font-family: 'Roboto Slab', serif;
-      margin-bottom: 1.5rem;
-      font-weight: 700;
+      font-size: 2rem;
+      margin-bottom: 2rem;
     }
 
     input[type="email"],
     input[type="password"] {
+      width: 100%;
+      padding: 0.85rem;
+      margin-bottom: 1.2rem;
+      border: none;
+      border-radius: 8px;
+      font-size: 1rem;
+      outline: none;
+    }
+
+    input:focus {
+      box-shadow: 0 0 0 2px #eee;
+      background-color: #1a3580;
+    }
+
+    button {
+      width: 100%;
+      padding: 0.85rem;
+      background-color: #eee;
+      color: #0A1F44;
+      border: none;
+      border-radius: 8px;
+      font-weight: 700;
+      font-size: 1rem;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+    }
+
+    button:hover {
+      background-color: #c5c5c5;
+    }
+
+    .links {
+      margin-top: 1.5rem;
+    }
+
+    .links a {
+      color: #ccc;
+      font-size: 0.9rem;
+      text-decoration: none;
+      display: block;
+      margin-top: 0.5rem;
+    }
+
+    .links a:hover {
+      text-decoration: underline;
+    }
+
+    @media (max-width: 480px) {
+      .login-container {
+        padding: 2rem 1.5rem;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="login-container">
+    <h2>Entrar na Corretora MK7</h2>
+    <form>
+      <input type="email" placeholder="E-mail" required />
+      <input type="password" placeholder="Senha" required />
+      <button type="submit">Entrar</button>
+    </form>
+    <div class="links">
+      <a href="#">Esqueceu a senha?</a>
+      <a href="cadastro.html">Criar conta</a>
+    </div>
+  </div>
+</body>
+</html>
+
